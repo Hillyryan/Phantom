@@ -1,101 +1,32 @@
+<!DOCTYPE HTML>
 <html>
-<style>
-	td.details-control {
-    background: url('../resources/details_open.png') no-repeat center center;
-    cursor: pointer;
-}
-tr.details td.details-control {
-    background: url('../resources/details_close.png') no-repeat center center;
-}
-
-</style>	
-<head>
-  <link rel="stylesheet" type="text/css" href="data/jquery.dataTables.css">
-</head>
-  <body>
-<table id="example" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th></th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th></th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-            </tr>
-        </tfoot>
-    </table>
-  <script type="text/javascript" charset="utf8" src="data/jquery-1.8.2.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="data/jquery.dataTables.min.js"></script>
-  <script>
-function format ( d ) {
-    return 'Full name: '+d.first_name+' '+d.last_name+'<br>'+
-        'Salary: '+d.salary+'<br>'+
-        'The child row can contain any data you wish, including links, images, inner tables etc.';
-}
+    <head>
+        <meta charset="utf-8">
+        <title>Java Servlet JSON</title>
+        <script src="js/jquery.1.9.1.min.js"></script>
+        <!-- bootstrap just to have good looking page -->
+        <link href="bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <!-- we code these -->
+        <script src="js/myfunctions.js"></script>
+    </head>
  
-$(document).ready(function() {
-    var dt = $('#example').DataTable( {
-        "processing": true,
-        "serverSide": true,
-        "ajax": "scripts/ids-objects.php",
-        "columns": [
-            {
-                "class":          "details-control",
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ""
-            },
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" }
-        ],
-        "order": [[1, 'asc']]
-    } );
+    <body>
+        <h1 style="text-align:center">jQuery - Parse JSON <br></h1> 
+        <p>
+            <button class="btn btn-primary" type="button" onclick="show()">Show</button>
+        </p>
  
-    // Array to track the ids of the details displayed rows
-    var detailRows = [];
+        <!-- display all articles -->
+        <div style="width:700px;padding:20px;S">
+            <h5 style="text-align:center"><i style="color:#ccc"><small>Articles</small></i></h5>
  
-    $('#example tbody').on( 'click', 'tr td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = dt.row( tr );
-        var idx = $.inArray( tr.attr('id'), detailRows );
- 
-        if ( row.child.isShown() ) {
-            tr.removeClass( 'details' );
-            row.child.hide();
- 
-            // Remove from the 'open' array
-            detailRows.splice( idx, 1 );
-        }
-        else {
-            tr.addClass( 'details' );
-            row.child( format( row.data() ) ).show();
- 
-            // Add to the 'open' array
-            if ( idx === -1 ) {
-                detailRows.push( tr.attr('id') );
-            }
-        }
-    } );
- 
-    // On each draw, loop over the `detailRows` array and show any child rows
-    dt.on( 'draw', function () {
-        $.each( detailRows, function ( i, id ) {
-            $('#'+id+' td.details-control').trigger( 'click' );
-        } );
-    } );
-} );  
-  </script>
- 
-</body>
+            <table id="added-articles" class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Categories</th>
+                    <th>Tags</th>
+                </tr>
+            </table>
+        </div>
+    </body> 
 </html>
