@@ -34,15 +34,13 @@
             </tr>
         </tfoot>
     </table>
-<script>    
- $(document).ready(function() {
-    $('#example').DataTable( {
-        "ajax": "data/arrays.txt"
-    } );
-} );     
- </script> 
+
 <script>  	
 $(document).ready(function() {
+	  $('#example').DataTable( {
+        "ajax": "data/arrays.txt"
+    } );
+	
     var table = $('#example').DataTable({
         "columnDefs": [
             { "visible": false, "targets": 2 }
