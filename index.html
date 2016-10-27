@@ -1,11 +1,19 @@
 <!DOCTYPE HTML>
 <html>
   
-   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	
+<head>	
+	
+	  <link rel="stylesheet" type="text/css" href="data/jquery.dataTables.css">
+</head>
+   
+
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="js/jput.min.js"></script>     
         
         
-        <script>
+<script>
 $(document).ready(function(){
 
   
@@ -30,7 +38,7 @@ $(document).ready(function(){
 });
 </script>   
 
-<table jput="t_template">
+<table jput="t_template", id="example">
  <tbody jput="tbody_template">
      <tr>
          <td>{{match}}</td>
@@ -47,7 +55,7 @@ $(document).ready(function(){
 </table>
        
 $(document).ready(function() {
-    var table = $('#t_template').DataTable({
+    var table = $('#example').DataTable({
         "columnDefs": [
             { "visible": false, "targets": 2 }
         ],
@@ -71,8 +79,5 @@ $(document).ready(function() {
     } );
    
 } );
-	
-	
-	
 
 </html>
