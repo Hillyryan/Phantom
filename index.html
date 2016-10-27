@@ -20,13 +20,40 @@
         <div style="width:700px;padding:20px;S">
             <h5 style="text-align:center"><i style="color:#ccc"><small>Articles</small></i></h5>
  
-            <table id="added-articles" class="table">
-                <tr>
-                    <th>Title</th>
-                    <th>Categories</th>
-                    <th>Tags</th>
-                </tr>
-            </table>
+          
+        
+        <script>
+$(document).ready(function(){
+
+var json = [{"name": "name1","email":"email1@domain.com"},{"name": "name2","link":"email2@domain.com"}];
+//while running this code the template will be appended in your div with json data
+$("#tbody").jPut({
+    jsonData:json,
+    //ajax_url:"youfile.json",  if you want to call from a json file
+    name:"tbody_template",
+});
+
+});
+</script>   
+
+<table jput="t_template">
+ <tbody jput="tbody_template">
+     <tr>
+         <td>{{name}}</td>
+         <td>{{email}}</td>
+     </tr>
+ </tbody>
+</table>
+
+<table>
+ <tbody id="tbody">
+ </tbody>
+</table>
+        
+        
+        
+        
+        
         </div>
     </body> 
 </html>
