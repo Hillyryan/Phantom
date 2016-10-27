@@ -15,22 +15,19 @@
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Match</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Date</th>
+
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                 <th>Match</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Date</th>
             </tr>
         </tfoot>
     </table>
@@ -39,22 +36,22 @@
 
 	$(document).ready(function() {
       $('#example').DataTable( {
-        "ajax": "data/arrays.txt",
+        "ajax": "data/yourfile.txt",
 
         "columnDefs": [
-            { "visible": false, "targets": 2 }
+            { "visible": false, "targets": 3 }
         ],
-        "order": [[ 2, 'asc' ]],
+        "order": [[ 3, 'asc' ]],
         "displayLength": 25,
         "drawCallback": function ( settings ) {
             var api = this.api();
             var rows = api.rows( {page:'current'} ).nodes();
             var last=null;
  
-            api.column(2, {page:'current'} ).data().each( function ( group, i ) {
+            api.column(3, {page:'current'} ).data().each( function ( group, i ) {
                 if ( last !== group ) {
                     $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="5">'+group+'</td></tr>'
+                        '<tr class="group"><td colspan="3">'+group+'</td></tr>'
                     );
  
                     last = group;
