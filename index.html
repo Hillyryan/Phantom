@@ -62,6 +62,21 @@ $(document).ready(function(){
 	<tbody id="tbody">
  </tbody>
 </table>
-	
-	
+<script>  
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        "columnDefs": [
+            {
+                "targets": [ 3 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [ 4 ],
+                "visible": false
+            }
+        ]
+    } );
+} );
+</script>  	
 </html>
