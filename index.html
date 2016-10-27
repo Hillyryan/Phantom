@@ -8,11 +8,11 @@
         <script>
 $(document).ready(function(){
 
-var json = [{"name": "name1","email":"email1@domain.com"},{"name": "name2","link":"email2@domain.com"}];
+//var json = [{"name": "name1","email":"email1@domain.com"},{"name": "name2","link":"email2@domain.com"}];
 //while running this code the template will be appended in your div with json data
 $("#tbody").jPut({
     //jsonData:json,
-    ajax_url:"youfile.json",  //if you want to call from a json file
+    ajax_url:"data/youfile.json",  //if you want to call from a json file
     name:"tbody_template",
 });
 
@@ -22,8 +22,8 @@ $("#tbody").jPut({
 <table jput="t_template">
  <tbody jput="tbody_template">
      <tr>
-         <td>{{name}}</td>
-         <td>{{email}}</td>
+         <td>{{match}}</td>
+         <td>{{venue}}</td>
      </tr>
  </tbody>
 </table>
