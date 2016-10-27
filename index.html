@@ -13,7 +13,7 @@ $(document).ready(function(){
 		//$('#load_more').click(function(){
 				//jPut Code
 				$("#tbody").jPut({
-					ajax_url:'data/data.json',
+					ajax_url:'data/yourfile.json',
 					name:"tbody_template"
 				});		
 
@@ -33,7 +33,10 @@ $(document).ready(function(){
 <table jput="t_template">
  <tbody jput="tbody_template">
      <tr>
-         <td>{{name}}</td>
+         <td>{{match}}</td>
+	 <td>{{venue}}</td>   
+	 <td>{{time}}</td>   
+	 <td>{{date}}</td>  
      </tr>
  </tbody>
 </table>
