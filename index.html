@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 <table jput="t_template">
  <tbody jput="tbody_template">
-     <tr>
+  	 <tr>
          <td>{{match}}</td>
 	 <td>{{venue}}</td>   
 	 <td>{{time}}</td>   
@@ -50,7 +50,16 @@ $(document).ready(function(){
 </table>
 
 <table id="example">
- <tbody id="tbody">
+ <thead>
+            <tr>
+                <th>Match</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+	
+	<tbody id="tbody">
  </tbody>
 </table>
 	
