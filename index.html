@@ -20,9 +20,9 @@ $(document).ready(function(){
 //on click loading json from file & appending
 		//$('#load_more').click(function(){
 				//jPut Code
-				$("#tbody").jPut({
+				$("#trow").jPut({
 					ajax_url:'data/yourfile.json',
-					name:"tbody_template"
+					name:"trow_template"
 				});		
 
   
@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 <table jput="t_template">
  <tbody jput="tbody_template">
-  	 <tr>
+  	<tr jput="trow_template">
          <td>{{match}}</td>
 	 <td>{{venue}}</td>   
 	 <td>{{time}}</td>   
@@ -58,10 +58,12 @@ $(document).ready(function(){
                 <th>Date</th>
             </tr>
         </thead>
-	
-	<tbody id="tbody">
+		<tbody>
+		<tr id="trow">
+		</tr>
  </tbody>
 </table>
+	
 <script>  
 $(document).ready(function() {
     $('#example').DataTable( {
