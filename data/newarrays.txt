@@ -3,21 +3,55 @@
     [
       "Manchester City vs. Chelsea",
       "Machester",
-      "12:30 BST",
+      "12:30 GMT",
       "Saturday 3rd December 2016"
     ],
     [
       "Crystal Palace vs. Southampton",
-      "Crystal Palace",
-      "15:00 BST",
+      "London",
+      "15:00 GMT",
       "Saturday 3rd December 2016"
     ],
     [
       "Stoke City vs. Burnley",
       "Stoke",
-      "15:00 BST",
+      "15:00 GMT",
       "Saturday 3rd December 2016"
     ]
+[
+      "Tottenham Hotspur vs. Swansea City",
+      "London",
+      "15:00 GMT",
+      "Saturday 3rd December 2016"
+    ]
+[
+      "West Bromwich Albion vs. Watford",
+      "West Bromwich",
+      "15:00 GMT",
+      "Saturday 3rd December 2016"
+    ]
+
+[
+      "West Ham United vs. Arsenal",
+      "London",
+      "17:30 GMT",
+      "Saturday 3rd December 2016"
+    ]
+[
+      "Bournemouth vs. Liverpool",
+      "Bournemouth",
+      "13:30 GMT",
+      "Sunday 4th December 2016"
+    ]
+[
+      "Everton vs. Manchester United",
+      "Liverpool",
+      "16:00 GMT",
+      "Sunday 4th December 2016"
+    ]
+
+
+
 
   ]
 }
